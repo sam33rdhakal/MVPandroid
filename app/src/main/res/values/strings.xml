@@ -6,4 +6,6 @@
     <string name="title_activity_home">nChords</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="artistName_error">Name must not be empty.</string>
+    <string name="artistDescription_error">Description must not be empty.</string>
 </resources>

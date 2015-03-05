@@ -32,9 +32,9 @@ public class WelcomeActivity extends BaseActivity implements WelcomeView {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                hideSplashScreen();
+                jumpToHomeActivity();
             }
-        }, 3000);
+        }, 2000);
     }
 
     @Override
@@ -46,7 +46,6 @@ public class WelcomeActivity extends BaseActivity implements WelcomeView {
     @Override
     public void hideSplashScreen() {
         removeFragment(SPLASH_FRAGMENT_TAG);
-        jumpToHomeActivity();
     }
 
     @Override

@@ -15,9 +15,10 @@ import java.util.List;
 public class SongRepositoryImpl implements SongRepository {
 
     @Override
-    public void createArtist(String artistName, String artistDescription) {
+    public Artist createArtist(String artistName, String artistDescription) {
         Artist artist = ModelFactory.createArtistObject(artistName, artistDescription);
         artist.save();
+        return artist;
     }
 
     @Override

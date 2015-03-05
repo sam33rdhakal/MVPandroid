@@ -1,5 +1,7 @@
 package com.enepalichords.nepalichords.UI.Home;
 
+import android.text.TextUtils;
+
 import com.enepalichords.nepalichords.Data.Model.Artist;
 import com.enepalichords.nepalichords.interactors.DBInteractor;
 
@@ -21,8 +23,27 @@ public class HomePresenterImpl implements HomePresenter, HomeCallBack {
 
     @Override
     public boolean saveArtist(String name, String description) {
-        dbInteractor.saveArtist(name, description, this);
-        return true;
+        boolean flag = true;
+
+        if (TextUtils.isEmpty(name))
+        {
+            flag = false;
+            showArtistNameError("Artist name cant be null");
+        }
+
+        if (TextUtils.isEmpty(description))
+        {
+            flag = false;
+            showArtistDescriptionError();
+        }
+
+        if (flag)
+        {
+            dbInteractor.saveArtist(name, description, this);
+            homeView.clearInput();
+        }
+
+        return flag;
     }
 
     @Override
@@ -31,12 +52,21 @@ public class HomePresenterImpl implements HomePresenter, HomeCallBack {
     }
 
     @Override
-    public void updateMenu(List<Artist> artists) {
-        homeView.updateArtistList(artists);
+    public void updateMenu(Artist artist) {
+        homeView.addArtistToList(artist);
     }
 
     @Override
-    public void displayError() {
+    public void loadMenu(List<Artist> artists) {
+        homeView.loadArtistList(artists);
+    }
 
+
+    public void showArtistNameError(String message) {
+        homeView.showArtistNameError(message);
+    }
+
+    public void showArtistDescriptionError() {
+        homeView.showArtistDescriptionError();
     }
 }

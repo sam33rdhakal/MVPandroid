@@ -22,6 +22,7 @@ import java.util.List;
 /**
  * Created by sameer on 3/4/15.
  */
+
 public class NavigationDrawerFragment extends Fragment {
 
 
@@ -30,7 +31,7 @@ public class NavigationDrawerFragment extends Fragment {
     private View containerView;
     private RecyclerView recyclerView;
     private RecyclerViewAdaptor recyclerViewAdaptor;
-    List<Artist> categories;
+    List<Artist> artists;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,18 +42,25 @@ public class NavigationDrawerFragment extends Fragment {
         return layout;
     }
 
-    public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar, List<Artist> artists) {
-        this.categories = categories;
-        Toast.makeText(getActivity(), artists.size() + " items loaded", Toast.LENGTH_LONG).show();
+    public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar, List<Artist> _artists) {
+
+        this.artists = _artists;
+
+        Toast.makeText(getActivity(), " First items loaded", Toast.LENGTH_LONG).show();
+
+        //TODO
+        //recyclerViewAdaptor needs assisted injection
+
         recyclerViewAdaptor = new RecyclerViewAdaptor(getActivity(), artists);
         recyclerView.setAdapter(recyclerViewAdaptor);
+
         containerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(), mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                //draw action bar or toolbar again
                 getActivity().invalidateOptionsMenu();
             }
 
@@ -69,6 +77,13 @@ public class NavigationDrawerFragment extends Fragment {
                 mDrawerToggle.syncState();
             }
         });
+
     }
 
+    //add new artist to menu
+    public void updateMenuList(Artist artist) {
+        this.artists.add(artist);
+        Toast.makeText(getActivity(), "Updating list", Toast.LENGTH_LONG).show();
+        recyclerViewAdaptor.notifyItemInserted(artists.size());
+    }
 }

@@ -10,5 +10,13 @@ import java.util.List;
  */
 public interface HomeView {
 
-    public void updateArtistList(List<Artist> artists);
+    public void loadArtistList(List<Artist> artists);
+
+    public void addArtistToList(Artist artist);
+
+    public void showArtistNameError(String errorMessage);
+
+    public void showArtistDescriptionError();
+
+    public void clearInput();
 }

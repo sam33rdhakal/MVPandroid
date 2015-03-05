@@ -16,7 +16,7 @@ import dagger.Provides;
  */
 
 @Module(
-        injects = HomeActivity.class,
+        injects = {HomeActivity.class, NavigationDrawerFragment.class},
         includes = DBInteractorModule.class
         //library = true
 )
@@ -45,5 +45,4 @@ public class HomeModule {
     public NavigationDrawerFragment provideNavigationFragment() {
         return new NavigationDrawerFragment();
     }
-
 }

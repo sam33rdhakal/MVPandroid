@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface SongRepository {
 
-    public void createArtist(String artistName, String artistDescription);
+    public Artist createArtist(String artistName, String artistDescription);
 
     public Artist readArtist(int artistId);
 

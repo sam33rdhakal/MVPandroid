@@ -16,6 +16,30 @@
             layout="@layout/app_bar"
             android:id="@+id/app_bar"/>
 
+        <EditText
+            android:layout_below="@id/app_bar"
+            android:id="@+id/artistTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Artist Name"/>
+
+        <EditText
+            android:layout_below="@id/artistTxt"
+            android:id="@+id/descriptionTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"/>
+
+        <Button
+            android:id="@+id/btnCreateArtist"
+            android:layout_below="@id/descriptionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create artist"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            />
+
     </RelativeLayout>
 
     <fragment

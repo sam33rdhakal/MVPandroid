@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface HomeCallBack {
 
-    public void updateMenu(List<Artist> artists);
+    public void loadMenu(List<Artist> artists);
 
-    public void displayError();
+    public void updateMenu(Artist artist);
 }
