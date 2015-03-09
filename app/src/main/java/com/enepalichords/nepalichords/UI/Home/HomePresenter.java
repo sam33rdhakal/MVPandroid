@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface HomePresenter {
 
-    public boolean saveArtist(String name, String description);
-
     public void getArtistList();
+
+
 }

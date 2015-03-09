@@ -9,13 +9,14 @@ import dagger.Provides;
  */
 
 @Module(
-        library = true
+        library = true,
+        complete = false
 )
 
 public class DataModule {
 
     @Provides
-    public SongRepository provideSongRepository() {
-        return new SongRepositoryImpl();
+    public SongRepository provideSongRepository(FakeSongRepositoryImpl songRepository) {
+        return songRepository;
     }
 }

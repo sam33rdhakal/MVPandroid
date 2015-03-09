@@ -16,11 +16,14 @@ import com.enepalichords.nepalichords.R;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 
 public class RecyclerViewAdaptor extends RecyclerView.Adapter<RecyclerViewAdaptor.MenuViewHolder> {
 
     private LayoutInflater inflater;
     private List<Artist> artists;
+
 
     public RecyclerViewAdaptor(Context context, List<Artist> artists) {
         this.inflater = LayoutInflater.from(context);

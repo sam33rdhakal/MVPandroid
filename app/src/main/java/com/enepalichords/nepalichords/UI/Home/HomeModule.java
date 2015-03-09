@@ -1,9 +1,8 @@
 package com.enepalichords.nepalichords.UI.Home;
 
-import android.util.Log;
+import android.support.v7.widget.RecyclerView;
 
-import com.enepalichords.nepalichords.interactors.DBInteractor;
-import com.enepalichords.nepalichords.interactors.DBInteractorModule;
+import com.enepalichords.nepalichords.interactors.GetArtistModule;
 
 import javax.inject.Singleton;
 
@@ -17,8 +16,8 @@ import dagger.Provides;
 
 @Module(
         injects = {HomeActivity.class, NavigationDrawerFragment.class},
-        includes = DBInteractorModule.class
-        //library = true
+        includes = {GetArtistModule.class}
+
 )
 public class HomeModule {
 
@@ -36,9 +35,8 @@ public class HomeModule {
 
     @Provides
     @Singleton
-    public HomePresenter provideHomePresenter(DBInteractor dbInteractor, HomeView homeView) {
-        Log.d("HOMEMODULE", "creating presenter");
-        return new HomePresenterImpl(dbInteractor, homeView);
+    public HomePresenter provideHomePresenter(HomePresenterImpl homePresenter) {
+        return homePresenter;
     }
 
     @Provides

@@ -1,9 +1,6 @@
 package com.enepalichords.nepalichords.UI.Welcome;
 
-import com.enepalichords.nepalichords.AppModule;
-
 import dagger.Module;
-import dagger.Provides;
 
 
 /**
@@ -11,8 +8,8 @@ import dagger.Provides;
  */
 
 @Module(
-     injects = WelcomeActivity.class,
-     library = true
+        injects = WelcomeActivity.class,
+        library = true
 )
 public class WelcomeModule {
 

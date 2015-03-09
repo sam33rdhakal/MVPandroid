@@ -1,7 +1,6 @@
 package com.enepalichords.nepalichords.Data;
 
 import com.enepalichords.nepalichords.Data.Model.Artist;
-import com.enepalichords.nepalichords.UI.Home.HomeCallBack;
 
 import java.util.List;
 
@@ -11,11 +10,6 @@ import java.util.List;
  */
 public interface SongRepository {
 
-    public Artist createArtist(String artistName, String artistDescription);
-
-    public Artist readArtist(int artistId);
-
     public List<Artist> getAllArtist();
 
-    public void deleteArtist();
 }

@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.enepalichords.nepalichords.Data.Model.Artist;
 import com.enepalichords.nepalichords.R;
@@ -35,7 +34,6 @@ public class NavigationDrawerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Toast.makeText(getActivity(), " on create view fragment", Toast.LENGTH_LONG).show();
         View layout = inflater.inflate(R.layout.navigation_fragment, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerlist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -45,12 +43,8 @@ public class NavigationDrawerFragment extends Fragment {
     public void setUp(int fragmentId, DrawerLayout drawerLayout, Toolbar toolbar, List<Artist> _artists) {
 
         this.artists = _artists;
-
-        Toast.makeText(getActivity(), " First items loaded", Toast.LENGTH_LONG).show();
-
         //TODO
         //recyclerViewAdaptor needs assisted injection
-
         recyclerViewAdaptor = new RecyclerViewAdaptor(getActivity(), artists);
         recyclerView.setAdapter(recyclerViewAdaptor);
 
@@ -70,6 +64,7 @@ public class NavigationDrawerFragment extends Fragment {
                 getActivity().invalidateOptionsMenu();
             }
         };
+
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         mDrawerLayout.post(new Runnable() {
             @Override
@@ -78,12 +73,5 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
-    }
-
-    //add new artist to menu
-    public void updateMenuList(Artist artist) {
-        this.artists.add(artist);
-        Toast.makeText(getActivity(), "Updating list", Toast.LENGTH_LONG).show();
-        recyclerViewAdaptor.notifyItemInserted(artists.size());
     }
 }
