@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_1"
+    >
+
+    <View
+        android:id="@+id/paddingLayer"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"/>
+
+
+    <com.pkmmte.view.CircularImageView
+        android:layout_below="@id/paddingLayer"
+        android:id="@+id/coverImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:border_color="@color/divider"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        app:border_width="2dp"
+        app:border="true"
+        app:shadow="true"
+        android:src="@drawable/sam"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/artistText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/coverImage"
+        android:layout_marginBottom="5dp"
+        android:text="sameer dhakal"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+
+
+</RelativeLayout>

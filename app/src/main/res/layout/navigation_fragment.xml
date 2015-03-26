@@ -16,7 +16,7 @@
         android:id="@+id/drawerlist"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="@color/primaryLight"
+        android:background="@color/text"
         >
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>

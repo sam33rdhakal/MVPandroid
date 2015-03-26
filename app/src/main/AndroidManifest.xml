@@ -2,16 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.enepalichords.nepalichords">
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".App"
         android:theme="@style/AppTheme">
         <activity
             android:name=".UI.Welcome.WelcomeActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".UI.Artist.ArtistActivity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,9 +32,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.Home.HomeActivity"
-            android:label="@string/title_activity_home">
+            android:name=".UI.ArtistInformation.ArtistInformationActivity"
+            android:label="@string/title_activity_artist_information"
+            android:parentActivityName=".UI.Artist.ArtistActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UI.Artist.ArtistActivity"/>
         </activity>
+
+
     </application>
 
 </manifest>

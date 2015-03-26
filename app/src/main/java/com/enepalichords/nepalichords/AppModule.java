@@ -1,5 +1,7 @@
 package com.enepalichords.nepalichords;
 
+import android.content.Context;
+
 import dagger.Module;
 
 
@@ -8,9 +10,20 @@ import dagger.Module;
  */
 
 @Module(
-        injects = App.class
-        //includes = DataModule.class
+        injects = App.class,
+        complete = true,//includes = DataModule.class
+        library = true
 )
 public class AppModule {
 
+    private final Context context;
+
+    public AppModule(Context context) {
+        this.context = context;
+    }
+
+//    @Provides
+//    LayoutInflater provideLayoutInflater() {
+//        return LayoutInflater.from(context);
+//    }
 }

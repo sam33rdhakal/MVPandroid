@@ -3,7 +3,7 @@ package com.enepalichords.nepalichords;
 import android.app.Application;
 import android.os.Handler;
 
-import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import dagger.ObjectGraph;
@@ -52,6 +52,8 @@ public class App extends Application {
 
     //load the dependencies soon after application launches
     public List<Object> getModules() {
-        return Arrays.<Object>asList(AppModule.class);
+        LinkedList<Object> modules = new LinkedList<>();
+        modules.add(new AppModule(this));
+        return modules;
     }
 }

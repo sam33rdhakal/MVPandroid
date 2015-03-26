@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                >
+
+    <TextView
+        android:id="@+id/songTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Aakash Runcha"
+        android:textColor="@color/accent"
+        android:layout_marginBottom="10dp"/>
+
+    <ScrollView
+        android:id="@+id/lyricsSrollView"
+        android:layout_below="@id/songTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="false"
+            android:lineSpacingExtra="10dp"
+            android:text="@string/demosong"/>
+    </ScrollView>
+</RelativeLayout>

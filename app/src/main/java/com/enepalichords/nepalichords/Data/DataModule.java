@@ -16,7 +16,7 @@ import dagger.Provides;
 public class DataModule {
 
     @Provides
-    public SongRepository provideSongRepository(FakeSongRepositoryImpl songRepository) {
-        return songRepository;
+    public DataRepository provideSongRepository(MockedDataRepositoryImpl dataRepository) {
+        return dataRepository;
     }
 }

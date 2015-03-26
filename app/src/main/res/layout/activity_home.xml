@@ -14,22 +14,22 @@
 
         <include
             layout="@layout/app_bar"
-            android:id="@+id/app_bar"/>
+            android:id="@+id/app_bar"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
 
-        <RelativeLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/artistRecyclerView"
+            android:layout_below="@+id/app_bar"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/app_bar">
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:text="Home Activity Loaded"
-                />
-
-        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -40,8 +40,9 @@
         android:layout_width="280dp"
         android:layout_gravity="start"
         app:layout="@layout/navigation_fragment"
-        android:name="com.enepalichords.nepalichords.UI.Home.NavigationDrawerFragment"
+        android:name="com.enepalichords.nepalichords.UI.Artist.fragments.NavigationDrawerFragment"
         tools:layout="@layout/navigation_fragment"
         />
+
 
 </android.support.v4.widget.DrawerLayout>

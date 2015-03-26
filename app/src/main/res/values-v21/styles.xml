@@ -3,5 +3,6 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:colorControlHighlight">@color/colorHighlight</item>
     </style>
 </resources>

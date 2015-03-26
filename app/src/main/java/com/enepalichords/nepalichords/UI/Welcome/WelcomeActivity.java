@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.enepalichords.nepalichords.UI.Common.BaseActivity;
-import com.enepalichords.nepalichords.UI.Home.HomeActivity;
 import com.enepalichords.nepalichords.R;
+import com.enepalichords.nepalichords.UI.Artist.ArtistActivity;
+import com.enepalichords.nepalichords.UI.Common.View.BaseActivity;
 
-import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
-
-import javax.inject.Inject;
 
 
 public class WelcomeActivity extends BaseActivity implements WelcomeView {
@@ -21,7 +19,10 @@ public class WelcomeActivity extends BaseActivity implements WelcomeView {
 
     @Override
     public List<Object> getModules() {
-        return Arrays.<Object>asList(new WelcomeModule());
+//        return Arrays.<Object>asList(new WelcomeModule());
+        LinkedList<Object> modules = new LinkedList<>();
+        modules.add(new WelcomeModule());
+        return modules;
     }
 
     @Override
@@ -50,7 +51,7 @@ public class WelcomeActivity extends BaseActivity implements WelcomeView {
 
     @Override
     public void jumpToHomeActivity() {
-        startActivity(new Intent(this, HomeActivity.class));
+        startActivity(new Intent(this, ArtistActivity.class));
         finish();
     }
 }
