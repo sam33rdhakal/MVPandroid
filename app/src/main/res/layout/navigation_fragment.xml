@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
+    <ImageView
         android:id="@+id/brandIcon"
-        android:layout_height="200dp"
         android:layout_width="match_parent"
-        android:background="@color/primaryDark"/>
+        android:layout_height="350dp"
+        android:scaleType="fitCenter"
+        android:background="@drawable/side_bar"
+        android:clickable="true"
+        />
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/brandIcon"

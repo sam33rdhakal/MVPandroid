@@ -90,6 +90,7 @@ public class ArtistInformationActivity extends BaseActivity implements ArtistInf
 
     }
 
+
     @Override
     public void displayMessage() {
         Utils.ShowToastMessage(this, "Server Loading...");
@@ -153,7 +154,7 @@ public class ArtistInformationActivity extends BaseActivity implements ArtistInf
 
 
     private void LoadSongFragment(int songId) {
-//        addFragment(android.R.id.content, songDetailFragment, SongDetailFragment.TAG);
+        addFragment(android.R.id.content, songDetailFragment, SongDetailFragment.TAG);
     }
 
     @Override
@@ -206,5 +207,11 @@ public class ArtistInformationActivity extends BaseActivity implements ArtistInf
             }
         });
         animator.start();
+    }
+
+    public void goBack(View view) {
+
+//        getSupportFragmentManager().popBackStack();
+        removeFragment(SongDetailFragment.TAG);
     }
 }

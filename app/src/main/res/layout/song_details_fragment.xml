@@ -1,35 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:paddingTop="30dp"
-                >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFF"
+    >
 
-    <TextView
-        android:id="@+id/songTitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Aakash Runcha"
-        android:textColor="@color/accent"
-        android:layout_marginBottom="10dp"/>
-
-    <ScrollView
-        android:id="@+id/lyricsSrollView"
-        android:layout_below="@id/songTitle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
-        >
+        android:layout_height="?attr/actionBarSize"
+        android:clickable="true"
+        android:background="@color/primary">
+
+        <ImageView
+            android:onClick="goBack"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_white_24dp"/>
 
         <TextView
+            android:layout_gravity="center"
+            android:id="@+id/songTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Aakash Runcha"
+            android:textColor="@color/text"
+            android:paddingLeft="20dp"
+            />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="30dp"
+        >
+
+
+        <ScrollView
+            android:id="@+id/lyricsSrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:singleLine="false"
-            android:lineSpacingExtra="10dp"
-            android:text="@string/demosong"/>
-    </ScrollView>
-</RelativeLayout>
+            android:layout_marginBottom="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:lineSpacingExtra="10dp"
+                android:text="@string/demosong"/>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

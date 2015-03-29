@@ -49,6 +49,7 @@ public abstract class BaseActivity extends ActionBarActivity {
     //add the fragment
     protected void addFragment(int containerViewId, Fragment fragment, String TAG) {
         FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
         fragmentTransaction.add(containerViewId, fragment, TAG);
         fragmentTransaction.addToBackStack(TAG);
         fragmentTransaction.commit();
@@ -60,11 +61,11 @@ public abstract class BaseActivity extends ActionBarActivity {
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(TAG);
         if (fragment != null)
         {
+            fragmentTransaction.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out);
             fragmentTransaction.remove(fragment);
             fragmentTransaction.commit();
         }
     }
-
 
 
     protected int getActionBarSize() {
