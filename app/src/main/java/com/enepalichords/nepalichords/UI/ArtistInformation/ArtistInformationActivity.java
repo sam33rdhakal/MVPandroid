@@ -93,7 +93,7 @@ public class ArtistInformationActivity extends BaseActivity implements ArtistInf
 
     @Override
     public void displayMessage() {
-        Utils.ShowToastMessage(this, "Server Loading...");
+//        Utils.ShowToastMessage(this, "Server Loading...");
     }
 
     @Override

@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:singleLine="false"
                 android:lineSpacingExtra="10dp"
-                android:text="@string/demosong"/>
+                android:text="@string/lorem_ipsum"/>
         </ScrollView>
     </RelativeLayout>
 </LinearLayout>

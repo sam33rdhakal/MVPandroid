@@ -59,7 +59,7 @@ public class ArtistActivity extends BaseActivity implements ArtistView, Navigati
         initializeView();
         artistPresenter.getArtistList();
         artistPresenter.getMenuList();
-        Utils.ShowToastMessage(this, mScreenWidth + "");
+//        Utils.ShowToastMessage(this, mScreenWidth + "");
     }
 
     @Override
@@ -83,7 +83,7 @@ public class ArtistActivity extends BaseActivity implements ArtistView, Navigati
         //initialize recyclerView
         //set spanCount 3 if it is not phone
         itemsInRow = (mScreenWidth <= 1080) ? 2 : 3;
-        Utils.ShowToastMessage(this, mScreenWidth + " & spanCount =" + itemsInRow);
+//        Utils.ShowToastMessage(this, mScreenWidth + " & spanCount =" + itemsInRow);
         artistRecyclerView.setLayoutManager(new GridLayoutManager(this, itemsInRow));
         artistRecyclerView.addOnItemTouchListener(new RecyclerViewTouchListener(this, artistRecyclerView, new RecyclerViewTouchListener.ClickListener() {
             @Override
