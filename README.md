@@ -5,4 +5,4 @@ It is very simple application that displays great artists name in navigation men
 
 <h2>App Demo</h2>
 
-<a href="http://howdysam.com">Click for Demo</a>
+<a href="howdysam.com/?page_id=49">Click for Demo</a>
